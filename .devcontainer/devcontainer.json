@@ -1,16 +1,15 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
-  "waitFor": "onCreateCommand",
-  "onCreateCommand": ".devcontainer/setup.sh",
-  "updateContentCommand": "cargo build",
-  "postCreateCommand": "",
-  "postAttachCommand": {
-    "server": "rustlings watch"
+  "build": {
+    "dockerfile": "Dockerfile"
   },
+  "postCreateCommand": "cargo install --path .",
   "customizations": {
     "vscode": {
       "extensions": [
-        "rust-lang.rust-analyzer"
+        "fill-labs.dependi",
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "christian-kohler.path-intellisense"
       ]
     }
   }
